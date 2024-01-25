@@ -43,7 +43,7 @@ class user_create(Resource):
             return {"success": True, "message": "User created", "user": user_get_schema.dump(user)}
         
         except:
-            return {"success": False, "message": "Unexpected error"}
+            return {"success": False, "message": "Unexpected error"}, 500
 
 @api.route("/user/<int:id>")
 class user_read(Resource):
@@ -88,7 +88,7 @@ class user_read(Resource):
             return {"success": True, "message": "User updated", "user": user_get_schema.dump(user)}
         
         except:
-            return {"success": False, "message": "Unexpected error"}
+            return {"success": False, "message": "Unexpected error"}, 500
     
     ##############
     ### DELETE ###
