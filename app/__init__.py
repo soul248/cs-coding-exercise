@@ -25,18 +25,14 @@ def not_found(error):
     )
     return response
 
-@api.route('/hello')
-class HelloWorld(Resource):
-    def get(self):
-        return {'hello': 'world'}
+# @api.route('/hello')
+# class HelloWorld(Resource):
+#     def get(self):
+#         return {'hello': 'world'}
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     app.run(debug=True)
 
 # Import and add the namespaces of Restx
-# from app.service_users.namespace                    import api as users_api
-# api.add_namespace(users_api, path=f'/api/{api.version}')
-
-# Build the database:
-# This will create the database file using SQLAlchemy
-# db.create_all()
+from app.users.namespace import api as users_api
+api.add_namespace(users_api, path=f'/api/{api.version}')

@@ -11,12 +11,12 @@ with open("cs-coding-exercise-mock-data.sql", "w") as file:
                     name VARCHAR(100),
                     last_name VARCHAR(100),
                     email VARCHAR(100),
-                    created_at TIMESTAMP);\n""")
+                    created_at DATETIME);\n""")
     file.write("""CREATE TABLE relations (
                     id INT PRIMARY KEY AUTO_INCREMENT,
                     user1_id INT,
                     user2_id INT,
-                    created_at TIMESTAMP);\n""")
+                    created_at DATETIME);\n""")
     
     users = "INSERT INTO users (name, last_name, email, created_at) VALUES "
     for user_id in range(1, 1001):

@@ -11,7 +11,7 @@ DEBUG = True
 
 # Define the database - we are working with
 # SQLite for this example
-SQLALCHEMY_DATABASE_URI        = "mysql://cs-coding-exercise:cs-coding-exercise@mysql:3306/cs-coding-exercise?charset=utf8mb4"
+SQLALCHEMY_DATABASE_URI        = "mysql://cscodingexercise:cscodingexercise@mysql:3306/cscodingexercise?charset=utf8mb4"
 SQLALCHEMY_ECHO                = False
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 DATABASE_CONNECT_OPTIONS       = {}
