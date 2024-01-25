@@ -1,0 +1,6 @@
+flask
+flask-restx
+Flask-SQLAlchemy
+mysqlclient
+simplejson
+uwsgi

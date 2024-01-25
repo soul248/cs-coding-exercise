@@ -1,0 +1,44 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: .
+      network: host
+    container_name: "flask-api"
+    ports:
+      - "5108:5108"
+    environment:
+      WAIT_HOSTS: mysql:3306
+      WAIT_HOSTS_TIMEOUT: 300
+      WAIT_SLEEP_INTERVAL: 1
+      WAIT_HOST_CONNECT_TIMEOUT: 1
+      FLASK_APP: app.py
+      FLASK_DEBUG: 1
+      FLASK_RUN_HOST: 0.0.0.0
+      FLASK_RUN_PORT: 5108
+    restart: always
+    depends_on:
+      - mysql
+    networks:
+      - cs-coding-exercise
+
+  mysql:
+    image: "mysql:8.3.0"
+    container_name: "mysql"
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: yes
+      MYSQL_USER: cscodingexercise
+      MYSQL_PASSWORD: cscodingexercise
+      MYSQL_DATABASE: cscodingexercise
+    volumes:
+      - "./project_data/mysql:/var/lib/mysql/:rw"
+      - "./schemas/cs-coding-exercise-mock-data.sql:/docker-entrypoint-initdb.d/1.sql:r"
+    restart: always
+    networks:
+      - cs-coding-exercise
+
+networks:
+  cs-coding-exercise:
+    name: cs-coding-exercise
