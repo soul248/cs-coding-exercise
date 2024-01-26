@@ -15,13 +15,13 @@ class User(db.Model):
 
 ##### SCHEMAS #####
 class UserPutSchema(Schema):
-    name            = fields.Str()
-    last_name       = fields.Str()
-    email           = fields.Str(validate=validate.Email())
+    name      = fields.Str()
+    last_name = fields.Str()
+    email     = fields.Str(validate=validate.Email())
     
 class UserGetSchema(Schema):
-    id              = fields.Int(dump_only=True)
-    name            = fields.Str()
-    last_name       = fields.Str()
-    email           = fields.Str(validate=validate.Email())
-    created_at      = fields.DateTime(dump_only=True)
+    id         = fields.Int(dump_only=True)
+    name       = fields.Str()
+    last_name  = fields.Str()
+    email      = fields.Str(validate=validate.Email())
+    created_at = fields.DateTime(dump_only=True)
