@@ -3,5 +3,4 @@ flask-restx
 Flask-SQLAlchemy
 mysqlclient
 simplejson
-uwsgi
 marshmallow
