@@ -19,6 +19,5 @@ RUN pip install -r requirements.txt
 
 COPY app ./app
 COPY config.py ./config.py
-COPY uwsgi.ini ./uwsgi.ini
 
 CMD ["sh", "-c", "/wait ; flask run"]
