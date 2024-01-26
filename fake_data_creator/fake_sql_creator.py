@@ -34,3 +34,5 @@ with open("cs-coding-exercise-mock-data.sql", "w") as file:
         file.write(relations.rstrip(', \n') + "; \n")
     
     file.write("CREATE INDEX user1_id_idx ON relations(user1_id); \n")
+    file.write("CREATE INDEX user2_id_idx ON relations(user2_id); \n")
+    file.write("CREATE INDEX relations_idx ON relations(user1_id, user2_id);  \n")
