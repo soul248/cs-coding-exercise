@@ -16760,3 +16760,5 @@ INSERT INTO relations (user1_id, user2_id, created_at) VALUES (1000, 746, NOW())
 (1000, 598, NOW()), 
 (1000, 42, NOW()); 
 CREATE INDEX user1_id_idx ON relations(user1_id); 
+CREATE INDEX user2_id_idx ON relations(user2_id); 
+CREATE INDEX relations_idx ON relations(user1_id, user2_id); 
